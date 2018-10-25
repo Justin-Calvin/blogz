@@ -10,10 +10,26 @@
     </head>
 <body>
     
+    
     <div>
-        <a href='/' style="font-size: 15px;">Main Blog Page</a>
-        <a href='/newpost' style="font-size: 15px;">Add A Blog Entry</a>
+        <a href='/index' style="font-size: 15px; padding: 5px;">Home</a>
+        <a href='/blog' style="font-size: 15px; padding: 5px;">All Posts</a>
+        <a href='/newpost' style="font-size: 15px; padding: 5px;">New Post</a>
+
     </div>
+    <div align="right">
+            <a href='/register' style="font-size: 15px; padding: 5px;">Sign Up</a>
+            <a href='/login' style="font-size: 15px; padding: 5px;">Login</a>
+            <a href='/logout' style="font-size: 15px; padding: 5px;">Logout</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
 
     {% block content %}
     {% endblock %}
