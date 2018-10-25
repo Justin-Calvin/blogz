@@ -2,6 +2,10 @@
 
 {% block content %}
     <h1 align="center">Blog Posts</h1>
+
+    <hr>
+
+    
     {% if blogs|length == 0 %}
     <p>No blogs have been posted</p>
     {% else %}
@@ -16,8 +20,8 @@
             <p>{{blog.body}}
             </p>
             <li>
-                <p style="font-size: 10px;">Written by 
-                    <a href="/user?id={{blog.owner.id}}" style="font-size: 10px;">{{blog.owner.name}}</a>
+                <p style="font-size: 14px;">Written by 
+                    <a href="/user?id={{blog.owner.id}}" style="font-size: 14px;">{{blog.owner.name}}</a>
                 </p>
             </li>
 

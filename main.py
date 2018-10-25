@@ -155,14 +155,12 @@ def single():
 
     blog_id = int(request.args.get('id', 'default id'))
     blog = Blog.query.get(blog_id)
-    blog_owner = blog.owner
     blog_title = blog.title
     blog_body = blog.body
     username = blog.owner.name
     userid = blog.owner.id
 
-    return render_template('post.html', blog_owner=blog_owner, blog_title=blog_title,
-     blog_body=blog_body, username=username, userid=userid)
+    return render_template('post.html', blog_title=blog_title, blog_body=blog_body, username=username, userid=userid)
 
 @app.route('/user')
 def singleUser():
